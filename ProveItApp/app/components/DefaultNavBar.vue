@@ -6,10 +6,10 @@
         </a>
         <ul class="flex gap-6 text-2xl ">
             <li>
-                <NuxtLink to="/methods" class="text-green-900">Learn</NuxtLink>
+                <NuxtLink to="/learn" class="text-green-900">Learn</NuxtLink>
             </li>
             <li>
-                <NuxtLink to="/about" class="text-green-900">Concepts</NuxtLink>
+                <NuxtLink to="/concepts" class="text-green-900">Concepts</NuxtLink>
             </li>
         </ul>
     </nav>

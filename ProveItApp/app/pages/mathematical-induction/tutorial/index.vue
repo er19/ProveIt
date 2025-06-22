@@ -1,9 +1,11 @@
 <script setup lang="ts">
-
+definePageMeta({
+    layout: 'exerciseIntroOutro'
+})
 </script>
 
 <template>
     <div>
-        <slot></slot>
+
     </div>
 </template>

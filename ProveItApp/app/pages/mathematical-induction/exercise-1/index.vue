@@ -1,6 +1,6 @@
 <script setup lang="ts">
-    definePageMeta({
-        layout: 'default'
+     definePageMeta({
+    layout: 'exerciseIntroOutro'
     })
 </script>
 <template>
@@ -8,5 +8,3 @@
 
     </div>
 </template>
-
-

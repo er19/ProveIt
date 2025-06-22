@@ -1,15 +1,17 @@
 <script setup lang="ts">
-    import { MathfieldElement } from "mathlive";
-    const mfe = new MathfieldElement();
     definePageMeta({
     layout: 'default'
     })
 </script>
  
 <template>
-    <link rel="stylesheet" href="mathlive-fonts.css" />
-    <div>
-         <math-field>f(x)= x+1</math-field>
+    <div class="flex flex-col items-center justify-center gap-2 h-screen  mx-auto">
+        <div class="grid grid-cols gap-10 w-5/6">
+            <ProofExercisesButton url="/mathematical-induction/tutorial" label="Tutorial"></ProofExercisesButton>
+            <ProofExercisesButton url="/mathematical-induction/exercise-1" label="Exercise 1"></ProofExercisesButton>
+            <ProofExercisesButton url="/mathematical-induction/exercise-2" label="Exercise 2"></ProofExercisesButton>
+            <ProofExercisesButton url="/mathematical-induction/final-exercise" label="Final Exercise"></ProofExercisesButton>
+        </div>
     </div>
 </template>
 
