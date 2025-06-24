@@ -5,6 +5,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/ui',
     '@nuxt/eslint',
+    '@nuxt/image',
+    'nuxt-lucide-icons'
   ],
 
   css: ['~/assets/css/main.css'],

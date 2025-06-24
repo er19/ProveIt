@@ -10,8 +10,8 @@
         <div>
         <slot></slot>
         </div>
-        <footer>
-        
+        <footer class="p-8 sticky bottom-0 mx-auto items-center">
+            
         </footer>
     </div>   
 </template>

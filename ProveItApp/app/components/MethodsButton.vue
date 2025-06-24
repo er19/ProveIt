@@ -13,7 +13,7 @@
     <div v-if="isUrlExist">
         <NuxtLink :to="props.url" >
             <UCard class="flex border-8 border-black rounded-5xl bg-[#274C43] items-center justify-center py-12">
-                    <span class="text-4xl text-white">
+                <span class="text-4xl text-white">
                     {{ props.label }}
                 </span>
             </UCard>
