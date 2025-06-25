@@ -22,34 +22,43 @@ function handleDrop(evt:any) {
 // Drop zone
 const proofSteps = ref([])
 </script>
+
+<style>
+.sortable-ghost {
+  font-size: 12px !important; /* or any size you want */
+  opacity: 0.7;
+  background-color: #e5e7eb; /* optional: gray-200 */
+}
+</style>
+
 <template>
   <div class="grid grid-cols-3 grid-rows-2 gap-4 overflow-hidden">
     <div class="col-span-2 row-span-2 flex flex-col">
       <p class="text-black text-2xl font-bold mb-4">2.Induction Step</p>
       <p class="text-black text-2xl font-bold mb-4">We will now show that P(k+1) also holds.</p>
       <!-- Math lines grid -->
-      <div class="flex gap-4 items-center mb-2 text-black text-2xl font-bold">
-        <div class="grid grid-rows-2 items-center justify-center gap-4">
+      <div class="flex gap-4 mb-2 text-black text-2xl font-bold">
+        <div class="grid grid-rows-2 items-start gap-4">
             <MathBlock expression="n = k + 1"/>
             <div></div>
         </div>
-        <div class="grid grid-rows-2 items-center justify-center gap-4">
+        <div class="grid grid-rows-2 items-start  gap-4">
             <MathBlock expression="\implies"/>
             <div></div>
         </div>
-        <div class="grid grid-rows-2 items-center justify-center gap-4">
+        <div class="grid grid-rows-2 items-start  gap-4">
             <MathBlock expression="\sum_{i=1}^{k+1} i"/> 
             <div></div> 
         </div>
-        <div class="grid grid-rows-2 items-center justify-center gap-4">
+        <div class="grid grid-rows-2 items-start  gap-4">
             <MathBlock expression="="/>
             <MathBlock expression="="/>
         </div>
-        <div class="grid grid-rows-2 items-center justify-center gap-4">
+        <div class="grid grid-rows-2 items-start  gap-4">
             <MathBlock expression="\sum_{i=1}^{k} i + k + 1"/>
             
             <MathBlock expression="\frac{k(k+1)}{2} + k + 1" v-if="useInductionHypothesis"/>
-            <div v-if ="!useInductionHypothesis" class="flex bg-gray justify-around items-center">
+            <div v-if ="!useInductionHypothesis" class="flex bg-gray justify-around items-start">
               <draggable
                 v-model="dummyZone"
                 group="proof"
@@ -66,7 +75,7 @@ const proofSteps = ref([])
               <MathBlock expression="+ k + 1"></MathBlock>
             </div>
         </div>
-        <div class="grid grid-rows-2  items-center justify-center gap-4">
+        <div class="grid grid-rows-2  items-start gap-4">
           <span class="ml-2">| Definition of Big Sigma Notation</span>
           <span v-if="useInductionHypothesis" class="ml-2">| Induction Hypothesis</span>
         </div>
@@ -112,4 +121,5 @@ const proofSteps = ref([])
     </div>
   </div>
 </template>
+
 
