@@ -8,13 +8,12 @@ definePageMeta({
 </script>
 
 <template>
-
-    <div class="grid grid-cols-2 grid-rows-2 gap-4 overflow-hidden mx-auto" >
-        <div class="row-span-2">
+    <div class="grid grid-cols-3 grid-rows-2 gap-4 overflow-hidden" >
+        <div class="col-span-2 row-span-2">
             <h3 class="text-black text-2xl font-bold mb-4">Prove by induction that 1 + 2 + 3 + . . . + n = n(n+1)/2 for every positive integer n.</h3>
         </div>
-        <div ></div>
-        <div class="col-start-2">
+        <div class="col-start-3"></div>
+        <div class="col-start-3 row-start2-2">
             <div class="text-center px-4 justify-items-center">
             <!-- Speech Bubble -->
             <div class="bg-white border-4 border-black rounded-xl p-6 text-left inline-block relative text-lg font-medium mx-auto">
