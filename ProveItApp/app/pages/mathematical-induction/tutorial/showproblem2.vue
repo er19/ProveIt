@@ -10,15 +10,27 @@ definePageMeta({
 <template>
     <div class="grid grid-cols-3 grid-rows-3 gap-4 overflow-hidden " >
         <div class="col-span-2 row-span-2">
-            <p class="text-black text-2xl font-bold mb-4">Prove by induction that 1 + 2 + 3 + . . . + n = n(n+1)/2 for every positive integer n.</p>
+            <h3 class="flex text-black text-2xl font-bold mb-4 gap-4"><span>Prove by induction that </span><MathBlock expression="1 + 2 + 3 + . . . + n = \frac{n(n+1)}{2}"/> <span>for every positive integer n.</span></h3>
             <p class="text-black text-2xl font-bold mb-10">
                 We can transform this statement to make our life easier by using big sigma notation
             </p>
-            <p class="flex text-black text-2xl font-bold mb-4 justify-around items-center">
-                <MathBlock expression="\ 1+2+...+n = \frac{n(n+1)}{2}"/>
-                <MathBlock expression="\equiv"/>
-                <MathBlock expression="\sum_{i=1}^{n} i = \frac{n(n+1)}{2}"/>
-            </p>
+            
+             <div class="flex gap-4 mb-2 text-black text-2xl font-bold justify-around">
+                <div class="grid grid-rows-2 items-center gap-4">
+                    <MathBlock expression="1 + 2 + 3 + . . . + n  = \frac{n(n+1)}{2} "/>
+                    
+                </div>
+                <div class="grid grid-rows-2 items-center gap-4">
+                    <MathBlock expression="\equiv"/>
+                    
+                </div>
+                <div class="grid grid-rows-2 items-center gap-4">
+                    <MathBlock expression="\sum_{i=1}^{n} i = \frac{n(n+1)}{2}"/> 
+                    
+                </div>
+                
+        
+            </div>
         </div>
         <div class="col-start-3"></div>
         <div class="col-start-3 row-start-2">

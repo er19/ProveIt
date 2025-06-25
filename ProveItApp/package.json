@@ -20,7 +20,8 @@
     "katex": "^0.16.22",
     "mathlive": "^0.105.3",
     "nuxt": "^3.17.4",
-    "nuxt-lucide-icons": "^1.0.5"
+    "nuxt-lucide-icons": "^1.0.5",
+    "vuedraggable": "^4.1.0"
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.4.0",

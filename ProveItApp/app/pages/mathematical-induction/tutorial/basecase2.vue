@@ -15,11 +15,33 @@ definePageMeta({
             <p class="text-black text-2xl font-bold mb-10">
               1. Base Case
             </p>
-            <p class="flex text-black text-2xl font-bold mb-4 justify-around items-center">
-                <MathBlock expression="n = 1"/>
-                <MathBlock expression="\implies"/>
-                <MathBlock expression="\sum_{i=1}^{1} i = 1 = \frac{(1+1)1}{2}"/>
-            </p>
+             <div class="flex gap-4 mb-2 text-black text-2xl font-bold">
+                <div class="grid grid-rows-2 items-start gap-4">
+                    <MathBlock expression="n = 1"/>
+                    
+                </div>
+                <div class="grid grid-rows-2 items-start gap-4">
+                    <MathBlock expression="\implies"/>
+                    
+                </div>
+                <div class="grid grid-rows-2 items-start gap-4">
+                    <MathBlock expression="\sum_{i=1}^{1} i = 1"/> 
+                    
+                </div>
+                <div class="grid grid-rows-2 items-start gap-4">
+                    <MathBlock expression="="/>
+                    
+                </div>
+                <div class="grid grid-rows-2 items-start gap-4">
+                    <MathBlock expression="1 = \frac{(1+1)1}{2}"/>
+                    
+                </div>
+                <div class="grid grid-rows-2  items-start gap-4">
+                    <MathBlock expression="= \frac{(1+1)1}{2}"/>
+                
+                </div>
+        
+            </div>
         </div>
         <div class="col-start-3"></div>
         <div class="col-start-3 row-start2-2">
