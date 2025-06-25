@@ -55,6 +55,9 @@ Transition
 https://vuejs.org/guide/built-ins/transition
 https://animejs.com/
 
+Katex
+https://katex.org/
+
 
 ## Extra Link
 

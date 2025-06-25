@@ -10,7 +10,7 @@ const rightUrl = computed(() => route.meta.righturl as string)
         <header class=" p-8 sticky top-0 mx-auto  w-screen">
             <ExerciseContentHeader :title="titlePage"></ExerciseContentHeader>
         </header>
-        <div class="flex p-8 mx-auto w-screen justify-center">
+        <div class="flex p-8 mx-auto w-screen justify-center h-screen">
             <slot></slot>
         </div>
         <footer class="p-8 sticky bottom-0 mx-auto w-screen">

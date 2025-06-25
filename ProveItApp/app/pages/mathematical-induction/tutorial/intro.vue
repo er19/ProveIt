@@ -8,7 +8,7 @@ const params = useRoute().params
 </script>
 
 <template>
-    <div class="flex items-center justify-center min-h-screen">
+    <div class="flex items-center justify-center overflow-hidden ">
         <div class="relative text-center px-4 justify-items-center">
             <!-- Speech Bubble -->
             <div class="bg-white border-4 border-black rounded-xl p-6 text-left inline-block relative text-lg font-medium mx-auto">

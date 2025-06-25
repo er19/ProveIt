@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     'nuxt-lucide-icons'
   ],
 
-  css: ['~/assets/css/main.css'],
+  css: ['~/assets/css/main.css', 'katex/dist/katex.min.css'],
    ui: {
     fonts: false,
     colorMode: false,
