@@ -13,10 +13,11 @@
   },
   "dependencies": {
     "@cortex-js/compute-engine": "^0.29.1",
-    "@iconify-json/lucide": "^1.2.44",
+    "@iconify-json/lucide": "^1.2.53",
     "@iconify-json/simple-icons": "^1.2.34",
     "@nuxt/image": "^1.10.0",
     "@nuxt/ui": "^3.1.2",
+    "@vue/compiler-sfc": "^3.5.17",
     "katex": "^0.16.22",
     "mathlive": "^0.105.3",
     "nuxt": "^3.17.4",

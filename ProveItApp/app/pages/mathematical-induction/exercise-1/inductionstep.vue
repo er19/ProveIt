@@ -3,7 +3,7 @@ definePageMeta({
     layout: 'exercise-content',
     lefturl: 'inductionhypothesis',
     righturl: 'inductionstep2',
-    title: 'Tutorial'
+    title: 'Exercise 1'
 })
 
 </script>
@@ -22,8 +22,7 @@ definePageMeta({
                     
                 </div>
                 <div class="grid grid-rows-2 items-start gap-4">
-                    <MathBlock expression="\sum_{i=1}^{k+1} i"/> 
-                    
+                    <div></div>
                 </div>
                 <div class="grid grid-rows-2 items-start gap-4">
                     <div></div>
@@ -46,7 +45,7 @@ definePageMeta({
             <!-- Speech Bubble -->
             <div class="bg-white border-4 border-black rounded-xl p-6 text-left inline-block relative text-lg font-medium mx-auto">
                 <p class="">
-                    Now we will do induction step <br/>
+                    Now we will do induction step<br/>
                     to prove for any k that our <br/>
                     hypothesis holds.
                 </p>

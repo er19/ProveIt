@@ -10,7 +10,7 @@
             <NuxtLink to="/mathematical-induction/tutorial/intro">
                 <ProofExercisesButton label="Tutorial"></ProofExercisesButton>
             </NuxtLink>
-            <NuxtLink to="/mathematical-induction/exercise-1/intro">
+            <NuxtLink to="/mathematical-induction/exercise-1/showproblem">
                 <ProofExercisesButton label="Exercise 1"></ProofExercisesButton>
             </NuxtLink>
             <NuxtLink to="/mathematical-induction/exercise-2/intro">
