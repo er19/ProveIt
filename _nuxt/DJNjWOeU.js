@@ -1,1 +1,0 @@
-import{f as t,c as o,o as s,a as n}from"./BGOfpBgN.js";const r={class:"flex flex-col items-center justify-center gap-4 h-screen"},f=t({__name:"index",setup(a){return(c,e)=>(s(),o("div",r,e[0]||(e[0]=[n("h1",null,"Welcome to ProveIt",-1)])))}});export{f as default};
