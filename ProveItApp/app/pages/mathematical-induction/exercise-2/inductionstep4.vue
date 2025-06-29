@@ -2,7 +2,7 @@
 definePageMeta({
     layout: 'exercise-content',
     lefturl: 'inductionstep3',
-    righturl: 'inductionstep5',
+    righturl: 'outro',
     title: 'Exercise 2'
 })
 const mathAnswer = ref<string[]>([  '(k+1)(k+2)((\\frac{1}{3}k) + 1)',
