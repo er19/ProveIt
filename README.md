@@ -1,45 +1,66 @@
-# ProveIt
+# Documentation on important links and command
 
-## Project Description: Interactive Proof Learning Tool
+Look at [Nuxt docs](https://nuxt.com/docs/getting-started/introduction) and [Nuxt UI docs](https://ui.nuxt.com) to learn more.
 
-### 1. Learning Problem & Empathy Mapping
+## Setup
 
-Many university students struggle to understand and construct mathematical proofs, especially in formal settings like logic or induction. 
+Make sure to install the dependencies:
 
-Common student challenges include:
-- **Confusion without clear steps**: Students often don’t know where to start.
-- **Lack of confidence**: Difficulty in writing proofs independently.
-- **Desire for approachable learning**: Students want more interactive and less intimidating ways to learn.
+```bash
+# npm
+npm install
+```
 
-### 2. Planned Design Features / Tools
+## Development Server
 
-- **Step-by-step proof builder**: Guided templates to structure logical thinking.
-- **Box Agent**: A friendly virtual assistant offering tips, encouragement, and hints.
-- **Visual proof tree/structure**: Graphical representation to reduce cognitive load and make logic connections clearer.
+Start the development server on `http://localhost:3000`:
 
-### 3. Group Roles
+```bash
+# npm
+npm run dev
 
-- **Sulaiman** – *UX/UI Design*: High-fidelity prototype and interface interaction design.
-- **Evan** – *Tech Lead*: Development of the web-based interactive proof interface.
-- **Muhammadsultonbek** – *Evaluation*: User testing and feedback analysis.
-- **Rishabh** – *Research*: Pedagogical grounding and literature review.
+```
 
-### 4. Pedagogical & Interaction Principles
+## Production
 
-- **Fading Scaffolding**: Gradually reduce support to build learner independence.
-- **Step-by-step Scaffolding**: Helps manage cognitive load and promote learning progression.
-- **Emotional Engagement**: Leverage virtual agents and visual encouragement to boost motivation.
-- **Constructivism**: Enable learners to build their own understanding through meaningful interaction.
+Build the application for production:
 
-### 5. Intended Outcomes & Measurement
+```bash
+# npm
+npm run build
+```
 
-**Outcomes:**
-- Improved understanding of proof strategies (initial focus on induction).
-- Increased confidence in constructing and explaining proofs.
-- Higher retention and engagement with proof-related material.
+Locally preview production build:
 
-**Measurement Approaches:**
-- Post-activity surveys assessing confidence and comprehension.
-- Success rates in proof-building tasks.
-- Time-on-task and user engagement metrics.
-- Qualitative feedback from user testing.
+```bash
+# npm
+npm run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## Plugin in this web 
+
+MathLive
+https://cortexjs.io/mathfield/guides/integration/
+
+ComputeEngine
+https://cortexjs.io/compute-engine/
+https://www.npmjs.com/package/complex-esm
+
+Drag and Drop 
+https://sortablejs.github.io/Vue.Draggable/#/simple
+
+Transition
+https://vuejs.org/guide/built-ins/transition
+https://animejs.com/
+
+Katex
+https://katex.org/
+
+
+## Extra Link
+
+https://www.youtube.com/watch?v=-kZLD40d-tI
+
+

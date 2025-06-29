@@ -10,6 +10,8 @@ export default defineAppConfig({
         // Set default button color to neutral
         // color: 'neutral'
       }
-    }
+    },
+    fonts: false,
+    colorMode: false,
   }
 })
