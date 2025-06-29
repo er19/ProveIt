@@ -13,7 +13,7 @@
             <NuxtLink to="/mathematical-induction/exercise-1/showproblem">
                 <ProofExercisesButton label="Exercise 1"></ProofExercisesButton>
             </NuxtLink>
-            <NuxtLink to="/mathematical-induction/exercise-2/intro">
+            <NuxtLink to="/mathematical-induction/exercise-2/showproblem">
                 <ProofExercisesButton label="Exercise 2"></ProofExercisesButton>
             </NuxtLink>
             <NuxtLink to="/mathematical-induction/final-exercise/intro">

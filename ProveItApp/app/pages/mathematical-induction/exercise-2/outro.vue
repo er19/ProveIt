@@ -1,7 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
     layout: 'exercise-intro-outro',
-    lefturl: 'outro1',
+    lefturl: 'inductionstep5',
     righturl: '/mathematical-induction'
 })
 const params = useRoute().params
@@ -13,13 +13,13 @@ const params = useRoute().params
             <!-- Speech Bubble -->
             <div class="bg-white border-4 border-black rounded-xl p-6 text-left inline-block relative text-lg font-medium mx-auto">
                 <p class="">
-                    If you need help, just click on me and <br />
-                    I will show you some hint for your task. 
-                    <br /><br/>
-                    Also there will be a bar to show the level <br/>
-                    of independence you have. Remember our goal is to be independent <br/>
-                    when it comes to writing proofs. If you reach the end of the bar, <br/>
-                    the final exercise will be opened and you can try write proof on your own. <br/>
+                    Exercise 1, done! Good job! <br/>
+                    You have proven the definition of odd number by <br/>
+                    mathematical induction. This will be quiet helpful <br/>
+                    and you can use the statement in other proof to <br/>
+                    support your argument, especially in induction step.<br/>
+                    Your progress bar also show progress. Keep going!<br/>
+                    In no time, you will be independent
                 </p>
                 <!-- Speech bubble tail -->
                 <div class="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[10px] border-r-[10px] border-t-[20px] border-l-transparent border-r-transparent border-t-black"></div>
