@@ -14,7 +14,7 @@ const rightUrl = computed(() => route.meta.righturl as string)
             <slot></slot>
         </div>
         <footer class="p-8 sticky bottom-0 mx-auto w-screen">
-            <FinalExexrciseMainFooter :right="rightUrl"></FinalExexrciseMainFooter>
+            <FinalExerciseMainFooter :right="rightUrl"></FinalExerciseMainFooter>
         </footer>
     </div>
 </template>

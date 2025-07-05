@@ -2,7 +2,7 @@
 
 const route= useRoute()
 const titlePage = computed(() => route.meta.title as string)
-const rightUrl = computed(() => route.meta.righturl as string)
+const leftUrl = computed(() => route.meta.lefturl as string)
 </script>
 
 <template>
@@ -14,7 +14,7 @@ const rightUrl = computed(() => route.meta.righturl as string)
             <slot></slot>
         </div>
         <footer class="p-8 sticky bottom-0 mx-auto w-screen">
-            <FinalExexrciseMainFooter :right="rightUrl"></FinalExexrciseMainFooter>
+            <FinalExerciseContentFooter :left="leftUrl"></FinalExerciseContentFooter>
         </footer>
     </div>
 </template>
