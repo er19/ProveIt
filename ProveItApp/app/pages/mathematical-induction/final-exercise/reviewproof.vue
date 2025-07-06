@@ -1,19 +1,18 @@
 <script setup lang="ts">
 import { useExerciseStore } from '~/store/FinalExerciseStore';
 import {ComputeEngine}  from '@cortex-js/compute-engine'
-import { useProgressStore } from '~/store/ProgressStore';
 
 const ce = new ComputeEngine()
+const isUserCorrect = ref(true)
 definePageMeta({
     layout: 'exercise-final-review',
-    lefturl: 'showproblem',
+    lefturl: 'outro',
     righturl: 'outro',
     title: 'Final Exercise',
 })
 
 
 const store = useExerciseStore()
-const progressStore = useProgressStore()
 
 const mathExpression =  store.statement
 
@@ -47,40 +46,7 @@ const answerInputInductionStepExplanations= ref<string[]>(["Definition of Big Si
 
 
 
-onMounted(()=> {
-    let temp = true
-    for (let i = 0; i < userInputBaseCase.length; i++) {
-        if (!temp) {
-            break;
-        }
-        temp = areLatexExpressionsEquivalent(userInputBaseCase[i] ?? '', answerBaseCase.value[i] ?? '');
-    }
-    for (let i = 0; i < userInputInductionHypothesis.length; i++) {
-        if (!temp) {
-            break;
-        }
-        temp = areLatexExpressionsEquivalent(userInputInductionHypothesis[i] ?? '', answerInputInductionHypothesis.value[i] ?? '');
-    }
-    for (let i = 0; i < userInputInductionStep.length; i++) {
-        if (!temp) {
-            break;
-        }
-        temp = areLatexExpressionsEquivalent(userInputInductionStep[i] ?? '', answerInputInductionStep.value[i] ?? '');
-    }
-    for (let i = 0; i < userInputInductionStepExplanation.length; i++) {
-        if (!temp) {
-            break;
-        }
-        temp = areLatexExpressionsEquivalent(userInputInductionStepExplanation[i] ?? '', answerInputInductionStepExplanations.value[i] ?? '');
-    }
-    for (let i = 0; i < userInputReformulate.length; i++) {
-        if (!temp) {
-            break;
-        }
-        temp = areLatexExpressionsEquivalent(userInputReformulate[i] ?? '', answerInputReformulate.value[i] ?? '');
-    }
-    progressStore.isFinalExerciseFinished = temp
-})
+
 
 function areLatexExpressionsEquivalent(a: string, b: string): boolean {
         console.log('Before parse User input (typing):', a)

@@ -1,36 +1,50 @@
 <script setup lang="ts">
+import { useExerciseStore } from '~/store/FinalExerciseStore';
 definePageMeta({
-    layout: 'exercise-content',
-    lefturl: 'showproblem2',
-    righturl: 'basecase2',
-    title: 'Tutorial'
+    layout: 'exercisefinalcontent',
+    lefturl: 'showproblem',
+    title: 'Final Exercise'
 })
+
+
+const store = useExerciseStore()
+
+const mathExpression = store.statement
+
+const userTarget = ref('reformulate')
+const userPosition = ref(0)
+const watcher = ref(0)
+
+const userInputReformulateStatement = store.reformulateStatement
+function selectIndex(i: number) {
+  userPosition.value = i
+  watcher.value++
+}
+
 
 </script>
 <template>
-    <div class="grid grid-cols-3 grid-rows-2 gap-4 overflow-hidden " >
-        <div class="col-span-2 row-span-2">
-            <p class=" flex  gap-4 text-black text-2xl font-bold mb-4"><span>Prove by induction that </span><MathBlock expression="\sum_{i=1}^{n} i = \frac{n(n+1)}{2}"/> <span>for every positive integer n.</span></p>
-            <p class=" flex  gap-4 text-black text-2xl font-bold mb-4"><span>Let P(n) be the statement that </span><MathBlock expression="\sum_{i=1}^{n} i = \frac{n(n+1)}{2}"/> </p>
-            <p class="text-black text-2xl font-bold mb-10"> 1. Base Case </p>
+    <div class="flex flex-col justify-start" >  
+        <div class="flex text-black text-2xl font-bold gap-4 mb-4 items-center">
+                <p>Let P(n) be the statement that</p> 
+                <MathBlock :expression='mathExpression' />
+                <p> for every positive integer n.</p>
         </div>
-        <div class="col-start-3"></div>
-        <div class="col-start-3 row-start2-2">
-            <div class="text-center px-4 justify-items-center">
-            <!-- Speech Bubble -->
-            <div class="bg-white border-4 border-black rounded-xl p-6 text-left inline-block relative text-lg font-medium mx-auto">
-                <p class="">
-                    Not feeling to rewrite your statement <br/>
-                    every time? Just define it once as P(n)! <br/>
-                    Now we continue with the base case
-                </p>
-                <!-- Speech bubble tail -->
-                <div class="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[10px] border-r-[10px] border-t-[20px] border-l-transparent border-r-transparent border-t-black"></div>
-            </div>
+        <div class="flex text-black text-2xl font-bold gap-4 mb-4 items-center">
+                Reformulate the statement
+        </div>
+        <div class="flex gap-4 mb-2 text-black text-2xl font-bold justify-around p-1 rounded-md cursor-pointer border transition-colors duration-200 min-w-70 min-h-8"  :class="[
+        userPosition === 0
+            ? 'border-blue-500 bg-blue-100'
+            : 'border-blue-300 hover:border-gray-300 hover:bg-gray-100'
+        ]" @click="selectIndex(0)">
 
-            <!-- Dr Cube character -->
-            <NuxtImg src="/Dr.Cube/Default.png" width="256px" height="256px"></NuxtImg>
+        <MathBlock :expression="userInputReformulateStatement[0] || ''" v-if="userInputReformulateStatement[0] !== ''"  />
         </div>
-        </div>
+        
+        
+        <div class=" flex  gap-4 text-black text-2xl mb-4">
+            <FinalExerciseUserMathInputComponent :types=userTarget :index=userPosition :reset=watcher></FinalExerciseUserMathInputComponent>
+        </div>      
     </div>
 </template>

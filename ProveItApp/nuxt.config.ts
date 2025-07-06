@@ -1,14 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
-
+  ssr:false,
   modules: [
     '@nuxt/ui',
     '@nuxt/eslint',
     '@nuxt/image',
-    'nuxt-lucide-icons'
+    'nuxt-lucide-icons',
   ],
-
+  
   css: ['~/assets/css/main.css', 'katex/dist/katex.min.css'],
    ui: {
     fonts: false,
