@@ -11,14 +11,14 @@ const store = useExerciseStore()
 
 const mathExpression = store.reformulateStatement[0] 
 
-const userTarget = ref('basecase')
+const userTarget = ref('inductionstep')
 const userPosition = ref(0)
 const watcher = ref(0)
 
 const userInputInductionStep = store.inductionStep
 const userInputInductionStepExplanation = store.inductionStepExplanation
 function selectIndexStep(i: number) {
-    userTarget.value = "basecase"
+    userTarget.value = "inductionstep"
     userPosition.value = i
     watcher.value++
 }
@@ -59,7 +59,7 @@ function selectIndexExp(i: number) {
                 </div>
                 
                 <div class="flex grow gap-4 mb-2 text-black text-2xl font-bold justify-around" >
-                    <div class="grid grid-rows-6 items-start gap-4">
+                    <div class="grid grid-rows-7 items-center gap-4">
                         <div class="flex mb-2 text-black text-2xl font-bold justify-around p-1 rounded-md cursor-pointer border transition-colors duration-200 min-w-70 min-h-8"  :class="[
                         userPosition === 1
                             ? 'border-blue-500 bg-blue-100'
@@ -73,8 +73,9 @@ function selectIndexExp(i: number) {
                         <div></div>
                         <div></div>
                         <div></div>
+                        <div></div>
                     </div>
-                    <div class="grid grid-rows-6 items-start gap-4">
+                    <div class="grid grid-rows-7 items-center gap-4">
                         <MathBlock expression='='/>
                         <MathBlock expression='='/>
                         <MathBlock expression='='/>
@@ -83,7 +84,7 @@ function selectIndexExp(i: number) {
                         <MathBlock expression='='/>
                         <MathBlock expression='='/>
                     </div>
-                    <div class="grid grid-rows-6 items-start gap-4 mb-10">
+                    <div class="grid grid-rows-7 items-center gap-4">
                         <div class="flex grow gap-4 mb-2 text-black text-2xl font-bold justify-around p-1 rounded-md cursor-pointer border transition-colors duration-200 min-w-70 min-h-8"  :class="[
                         userPosition === 2
                             ? 'border-blue-500 bg-blue-100'
@@ -137,12 +138,12 @@ function selectIndexExp(i: number) {
                             ? 'border-blue-500 bg-blue-100'
                             : 'border-blue-300 hover:border-gray-300 hover:bg-gray-100'
                         ]" @click="selectIndexStep(8)">
-                            <MathBlock :expression="userInputInductionStep[7] || ''" v-if="userInputInductionStep[7] !== ''" />
+                            <MathBlock :expression="userInputInductionStep[8] || ''" v-if="userInputInductionStep[8] !== ''" />
                         </div>
                         
                     </div>
 
-                     <div class="grid grid-rows-2  items-center gap-4 text-2xl">
+                     <div class="grid grid-rows-7  items-center gap-4 text-2xl">
                          <div class="flex grow gap-4 mb-2 text-black text-2xl font-bold justify-around p-1 rounded-md cursor-pointer border transition-colors duration-200 min-w-70 min-h-8"  :class="[
                         userPosition === 9
                             ? 'border-blue-500 bg-blue-100'
@@ -201,13 +202,7 @@ function selectIndexExp(i: number) {
                     </div>
                 </div>
             </div>
-            <div class="flex gap-4 mb-2 text-black text-2xl font-bold justify-around p-1 rounded-md cursor-pointer border transition-colors duration-200 min-w-70 min-h-8"  :class="[
-                userPosition === 9
-                    ? 'border-blue-500 bg-blue-100'
-                    : 'border-blue-300 hover:border-gray-300 hover:bg-gray-100'
-                ]" @click="selectIndexStep(9)">
-                <MathBlock :expression="userInputInductionStep[9] || ''" v-if="userInputInductionStep[9] !== ''" />
-            </div>
+            
             <div class=" flex  gap-4 text-black text-2xl mb-4">
                 <FinalExerciseUserMathInputComponent :types=userTarget :index=userPosition :reset=watcher></FinalExerciseUserMathInputComponent>
             </div>            

@@ -15,7 +15,7 @@ onMounted(() => {
     // if(store.reformulateStatement[0] === '') store.reformulateStatement[0]='1^3 + 2^3 + 3^3 + \\dots + n^3 = \\frac{n^2(n+1)^2}{4}'
 })
 
-const mathExpression = store.statement
+const mathExpression = '1^3 + 2^3 + 3^3 + \\dots + n^3 = \\frac{n^2(n+1)^2}{4}'
 </script>
 
 <template>

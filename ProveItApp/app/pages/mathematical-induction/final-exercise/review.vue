@@ -23,58 +23,67 @@ const userInputInductionHypothesis = store.inductionHypothesis
 const userInputReformulate = store.reformulateStatement
 const userInputInductionStepExplanation = store.inductionStepExplanation
 
-const answerBaseCase= ref<string[]>(["n=1", "\sum_{i=1}^{1}i^3", "1^3", 
-"1^2*1", "1^2*(\frac{4}{4})", "\frac{1^2*2^2}{4}", "\frac{1^2*(1+1)^2}{4}", "P(1) holds"])
+const answerBaseCase= ref<string[]>(["n=1", "\\sum_{i=1}^{1}i^3", "1^3", 
+"1^2*1", "1^2*(\\frac{4}{4})", "\\frac{1^2*2^2}{4}", "\\frac{1^2*(1+1)^2}{4}", "\\text{P(1) holds}"])
 
-const answerInputReformulate= ref<string[]>(["\sum_{i=1}^{n}i^3 = \frac{n^2(n+1)^2}{4}"])
+const answerInputReformulate= ref<string[]>(["\\sum_{i=1}^{n}i^3 = \\frac{n^2(n+1)^2}{4}"])
 
-const answerInputInductionHypothesis = ref<string[]>(["Assume that P(k) is correct for some positive integer k",
-    "This means",
-    "\sum_{i=1}^{k}i^3 = \frac{k^2(k+1)^2}{4}",
-    "holds"
+const answerInputInductionHypothesis = ref<string[]>(["\\text{Assume that P(k) is correct for some positive integer k}",
+    "\\text{This means}",
+    "\\sum_{i=1}^{k}i^3 = \\frac{k^2(k+1)^2}{4}",
+    "\\text{holds}"
 
 ])
 
-const answerInputInductionStep= ref<string[]>(["n=k+1", "\sum_{i=1}^{k+1}i^3" ,
-"\sum_{i=1}^{k+1}i^3 + (k+1)^3",  "\frac{k^2(k+1)^2}{4} + (k+1)^3", "\frac{k^2(k+1)^2 + 4*(k+1)^3}{4}",
-"\frac{(k+1)^2(k^2 + 4*(k+1))}{4}", "\frac{(k+1)^2(k^2 + 4k + 4)}{4}", "\frac{(k+1)^2(k+2)^2}{4}",
-"\frac{(k+1)^2((k+1)+1)^2}{4}"
+const answerInputInductionStep= ref<string[]>(["n=k+1", "\\sum_{i=1}^{k+1}i^3" ,
+"\\sum_{i=1}^{k+1}i^3 + (k+1)^3",  "\\frac{k^2(k+1)^2}{4} + (k+1)^3", "\\frac{k^2(k+1)^2 + 4*(k+1)^3}{4}",
+"\\frac{(k+1)^2(k^2 + 4*(k+1))}{4}", "\\frac{(k+1)^2(k^2 + 4k + 4)}{4}", "\\frac{(k+1)^2(k+2)^2}{4}",
+"\\frac{(k+1)^2((k+1)+1)^2}{4}"
 ])
 
-const answerInputInductionStepExplanations= ref<string[]>(["Definition of Big Sigma Notation", "Induction Hypothesis", 
-    "Arithmetics", "Arithmetics", "Arithmetics", "Arithmetics", "Arithmetics",
+const answerInputInductionStepExplanations= ref<string[]>(["\\text{Definition of Big Sigma Notation}", "\\text{Induction Hypothesis}", 
+    "\\text{Arithmetics}", "\\text{Arithmetics}", "\\text{Arithmetics}", "\\text{Arithmetics}", "\\text{Arithmetics}",
 ])
 
 
 
 onMounted(()=> {
     let temp = true
-    for (let i = 0; i < userInputBaseCase.length; i++) {
+    for (let i = 0; i < answerBaseCase.value.length; i++) {
         if (!temp) {
+            console.log("this is where it went wrong",userInputBaseCase[i-1] )
             break;
         }
         temp = areLatexExpressionsEquivalent(userInputBaseCase[i] ?? '', answerBaseCase.value[i] ?? '');
     }
-    for (let i = 0; i < userInputInductionHypothesis.length; i++) {
+    for (let i = 0; i < answerInputInductionHypothesis.value.length; i++) {
         if (!temp) {
+
+            console.log("this is where it went wrong",userInputBaseCase[i-1] )
             break;
         }
         temp = areLatexExpressionsEquivalent(userInputInductionHypothesis[i] ?? '', answerInputInductionHypothesis.value[i] ?? '');
     }
-    for (let i = 0; i < userInputInductionStep.length; i++) {
+    for (let i = 0; i < answerInputInductionStep.value.length; i++) {
         if (!temp) {
+
+            console.log("this is where it went wrong",userInputBaseCase[i-1] )
             break;
         }
         temp = areLatexExpressionsEquivalent(userInputInductionStep[i] ?? '', answerInputInductionStep.value[i] ?? '');
     }
-    for (let i = 0; i < userInputInductionStepExplanation.length; i++) {
+    for (let i = 0; i < answerInputInductionStepExplanations.value.length; i++) {
         if (!temp) {
+
+            console.log("this is where it went wrong",userInputBaseCase[i-1] )
             break;
         }
         temp = areLatexExpressionsEquivalent(userInputInductionStepExplanation[i] ?? '', answerInputInductionStepExplanations.value[i] ?? '');
     }
     for (let i = 0; i < userInputReformulate.length; i++) {
         if (!temp) {
+
+            console.log("this is where it went wrong",userInputBaseCase[i-1] )
             break;
         }
         temp = areLatexExpressionsEquivalent(userInputReformulate[i] ?? '', answerInputReformulate.value[i] ?? '');
@@ -83,14 +92,8 @@ onMounted(()=> {
 })
 
 function areLatexExpressionsEquivalent(a: string, b: string): boolean {
-        console.log('Before parse User input (typing):', a)
-        console.log('Before correctanswer (typing):', b) 
         const exprA = ce.parse(a)
         const exprB = ce.parse(b)
-        console.log('With Parse User input (typing):', exprA.toString())
-        console.log('With Parse correctanswer (typing):', exprB.toString()) 
-        console.log('With Simplify User input (typing):', exprA.simplify().toString())
-        console.log('With Simplify correctanswer (typing):', exprB.simplify().toString()) 
         return exprA.isSame(exprB)
     }
 
@@ -118,20 +121,30 @@ function areLatexExpressionsEquivalent(a: string, b: string): boolean {
               1. Base Case
             </p>
              <div class="flex gap-4 mb-2 text-black text-2xl font-bold">
-                <div class="grid  items-start gap-4">
+                <div class="grid grid-rows-6 items-center gap-4">
                     <div class="flex gap-4 mb-2 text-black text-2xl font-bold justify-around p-1 rounded-md cursor-pointer border transition-colors duration-200 min-w-24 min-h-8 border-blue-300 hover:border-gray-300 hover:bg-gray-100" >
 
                     <MathBlock :expression="userInputBaseCase[0] || ''" v-if="userInputBaseCase[0] !== ''"  />
                     
                     </div>
+                    <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
                 </div>
                 
-                <div class="grid  items-start gap-4">
+                <div class="grid grid-rows-6 items-start gap-4">
                     <MathBlock expression="\implies"/>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
                 </div>
                 
                 <div class="flex grow gap-4 mb-2 text-black text-2xl font-bold justify-around" >
-                    <div class="grid grid-rows-6 items-start gap-4">
+                    <div class="grid grid-rows-6 items-center gap-4">
                         <div class="flex mb-2 text-black text-2xl font-bold justify-around p-1 rounded-md cursor-pointer border transition-colors duration-200 min-w-70 min-h-8 border-blue-300 hover:border-gray-300 hover:bg-gray-100" >
                             <MathBlock :expression="userInputBaseCase[1] || ''" v-if="userInputBaseCase[1] !== ''" />
                         </div>
@@ -142,15 +155,14 @@ function areLatexExpressionsEquivalent(a: string, b: string): boolean {
                         <div></div>
                         <div></div>
                     </div>
-                    <div class="grid grid-rows-6 items-start gap-4">
-                        <MathBlock expression='='/>
+                    <div class="grid grid-rows-6 items-center gap-4">
                         <MathBlock expression='='/>
                         <MathBlock expression='='/>
                         <MathBlock expression='='/>
                         <MathBlock expression='='/>
                         <MathBlock expression='='/>
                     </div>
-                    <div class="grid grid-rows-6 items-start gap-4 mb-10">
+                    <div class="grid grid-rows-6 items-center gap-4">
                         <div class="flex grow gap-4 mb-2 text-black text-2xl font-bold justify-around p-1 rounded-md cursor-pointer border transition-colors duration-200 min-w-70 min-h-8 border-blue-300 hover:border-gray-300 hover:bg-gray-100"  >
                             <MathBlock :expression="userInputBaseCase[2] || ''" v-if="userInputBaseCase[2] !== ''" />
                         </div>
@@ -171,16 +183,12 @@ function areLatexExpressionsEquivalent(a: string, b: string): boolean {
                             <MathBlock :expression="userInputBaseCase[6] || ''" v-if="userInputBaseCase[6] !== ''" />
                         </div>
 
-                        <div class="flex gap-4 mb-2 text-black text-2xl font-bold justify-around p-1 rounded-md cursor-pointer border transition-colors duration-200 min-w-70 min-h-8 border-blue-300 hover:border-gray-300 hover:bg-gray-100" >
-                            <MathBlock :expression="userInputBaseCase[7] || ''" v-if="userInputBaseCase[7] !== ''" />
-                        </div>
-                        
                     </div>
                 </div>
             </div>
             <div class=" flex  gap-4 text-black text-2xl font-bold mb-10" >
                 <div class="flex gap-4 mb-2 text-black text-2xl font-bold justify-around p-1 rounded-md cursor-pointer border transition-colors duration-200 min-w-70 min-h-8 border-blue-300 hover:border-gray-300 hover:bg-gray-100"  >
-                    <MathBlock :expression="userInputBaseCase[8] || ''" v-if="userInputBaseCase[8] !== ''" />
+                    <MathBlock :expression="userInputBaseCase[7] || ''" v-if="userInputBaseCase[7] !== ''" />
                 </div>
                 
             </div>    
@@ -248,7 +256,6 @@ function areLatexExpressionsEquivalent(a: string, b: string): boolean {
                         <MathBlock expression='='/>
                         <MathBlock expression='='/>
                         <MathBlock expression='='/>
-                        <MathBlock expression='='/>
                     </div>
                     <div class="grid grid-rows-6 items-start gap-4 mb-10">
                         <div class="flex grow gap-4 mb-2 text-black text-2xl font-bold justify-around p-1 rounded-md cursor-pointer border transition-colors duration-200 min-w-70 min-h-8  border-blue-300 hover:border-gray-300 hover:bg-gray-100">
@@ -276,7 +283,7 @@ function areLatexExpressionsEquivalent(a: string, b: string): boolean {
                         </div>
 
                         <div class="flex gap-4 mb-2 text-black text-2xl font-bold justify-around p-1 rounded-md cursor-pointer border transition-colors duration-200 min-w-70 min-h-8  border-blue-300 hover:border-gray-300 hover:bg-gray-100" >
-                            <MathBlock :expression="userInputInductionStep[7] || ''" v-if="userInputInductionStep[7] !== ''" />
+                            <MathBlock :expression="userInputInductionStep[8] || ''" v-if="userInputInductionStep[8] !== ''" />
                         </div>
                         
                     </div>
@@ -310,9 +317,6 @@ function areLatexExpressionsEquivalent(a: string, b: string): boolean {
                         
                     </div>
                 </div>
-            </div>
-            <div class="flex gap-4 mb-2 text-black text-2xl font-bold justify-around p-1 rounded-md cursor-pointer border transition-colors duration-200 min-w-70 min-h-8  border-blue-300 hover:border-gray-300 hover:bg-gray-100" >
-                <MathBlock :expression="userInputInductionStep[9] || ''" v-if="userInputInductionStep[9] !== ''" />
             </div>
         </div>
         

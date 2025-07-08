@@ -55,6 +55,10 @@ const mathfieldEl = ref<any>(null)
                 initialLatex = store.reformulateStatement[props.index] || ''
                 mathfieldEl.value.setValue(initialLatex)
                 break
+            case "explanation":
+                initialLatex = store.inductionStepExplanation[props.index] || ''
+                mathfieldEl.value.setValue(initialLatex)
+                break
         }
         latex.value = mathfieldEl.value.getValue()
     })
@@ -77,6 +81,9 @@ const mathfieldEl = ref<any>(null)
             break
             case "reformulate":
             store.reformulateStatement[props.index] = answer
+            break
+            case "explanation":
+            store.inductionStepExplanation[props.index] = answer
             break
             default:
             break

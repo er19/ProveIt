@@ -38,7 +38,7 @@ function selectIndex(i: number) {
               1. Base Case
             </p>
              <div class="flex gap-4 mb-2 text-black text-2xl font-bold">
-                <div class="grid  items-start gap-4">
+                <div class="grid grid-rows-5 items-center gap-4">
                     <div class="flex gap-4 mb-2 text-black text-2xl font-bold justify-around p-1 rounded-md cursor-pointer border transition-colors duration-200 min-w-24 min-h-8"  :class="[
                     userPosition === 0
                         ? 'border-blue-500 bg-blue-100'
@@ -48,14 +48,26 @@ function selectIndex(i: number) {
                     <MathBlock :expression="userInputBaseCase[0] || ''" v-if="userInputBaseCase[0] !== ''"  />
                     
                     </div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
                 </div>
                 
-                <div class="grid  items-start gap-4">
+                <div class="grid grid-rows-5 items-center gap-4">
                     <MathBlock expression="\implies"/>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
                 </div>
                 
                 <div class="flex grow gap-4 mb-2 text-black text-2xl font-bold justify-around" >
-                    <div class="grid grid-rows-6 items-start gap-4">
+                    <div class="grid grid-rows-5 items-center gap-4">
                         <div class="flex mb-2 text-black text-2xl font-bold justify-around p-1 rounded-md cursor-pointer border transition-colors duration-200 min-w-70 min-h-8"  :class="[
                         userPosition === 1
                             ? 'border-blue-500 bg-blue-100'
@@ -70,15 +82,14 @@ function selectIndex(i: number) {
                         <div></div>
                         <div></div>
                     </div>
-                    <div class="grid grid-rows-6 items-start gap-4 ">
-                        <MathBlock expression='='/>
+                    <div class="grid grid-rows-5 items-center gap-4 ">
                         <MathBlock expression='='/>
                         <MathBlock expression='='/>
                         <MathBlock expression='='/>
                         <MathBlock expression='='/>
                         <MathBlock expression='='/>
                     </div>
-                    <div class="grid grid-rows-6 items-start gap-4 mb-10">
+                    <div class="grid grid-rows-5 items-center gap-4">
                         <div class="flex grow gap-4 mb-2 text-black text-2xl font-bold justify-around p-1 rounded-md cursor-pointer border transition-colors duration-200 min-w-70 min-h-8"  :class="[
                         userPosition === 2
                             ? 'border-blue-500 bg-blue-100'
@@ -87,7 +98,7 @@ function selectIndex(i: number) {
                             <MathBlock :expression="userInputBaseCase[2] || ''" v-if="userInputBaseCase[2] !== ''" />
                         </div>
                         
-                        <div class="flex growgap-4 mb-2 text-black text-2xl font-bold justify-around p-1 rounded-md cursor-pointer border transition-colors duration-200 min-w-70 min-h-8"  :class="[
+                        <div class="flex grow gap-4 mb-2 text-black text-2xl font-bold justify-around p-1 rounded-md cursor-pointer border transition-colors duration-200 min-w-70 min-h-8"  :class="[
                         userPosition === 3
                             ? 'border-blue-500 bg-blue-100'
                             : 'border-blue-300 hover:border-gray-300 hover:bg-gray-100'
@@ -118,24 +129,16 @@ function selectIndex(i: number) {
                         ]" @click="selectIndex(6)">
                             <MathBlock :expression="userInputBaseCase[6] || ''" v-if="userInputBaseCase[6] !== ''" />
                         </div>
-
-                        <div class="flex gap-4 mb-2 text-black text-2xl font-bold justify-around p-1 rounded-md cursor-pointer border transition-colors duration-200 min-w-70 min-h-8"  :class="[
-                        userPosition === 7
-                            ? 'border-blue-500 bg-blue-100'
-                            : 'border-blue-300 hover:border-gray-300 hover:bg-gray-100'
-                        ]" @click="selectIndex(7)">
-                            <MathBlock :expression="userInputBaseCase[7] || ''" v-if="userInputBaseCase[7] !== ''" />
-                        </div>
                         
                     </div>
                 </div>
             </div>
             <div class="flex gap-4 mb-2 text-black text-2xl font-bold justify-around p-1 rounded-md cursor-pointer border transition-colors duration-200 min-w-70 min-h-8"  :class="[
-                userPosition === 8
+                userPosition === 7
                     ? 'border-blue-500 bg-blue-100'
                     : 'border-blue-300 hover:border-gray-300 hover:bg-gray-100'
-                ]" @click="selectIndex(8)">
-                <MathBlock :expression="userInputBaseCase[8] || ''" v-if="userInputBaseCase[8] !== ''" />
+                ]" @click="selectIndex(7)">
+                <MathBlock :expression="userInputBaseCase[7] || ''" v-if="userInputBaseCase[7] !== ''" />
             </div>
             <div class=" flex  gap-4 text-black text-2xl mb-4">
                 <FinalExerciseUserMathInputComponent :types=userTarget :index=userPosition :reset=watcher></FinalExerciseUserMathInputComponent>
