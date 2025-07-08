@@ -1,7 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
     layout: 'exercise-intro-outro',
-    lefturl: 'inductionstep5',
+    lefturl: 'inductionstep4',
     righturl: '/mathematical-induction'
 })
 const params = useRoute().params
