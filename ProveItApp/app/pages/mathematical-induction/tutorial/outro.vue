@@ -1,10 +1,18 @@
 <script setup lang="ts">
+import { useProgressStore } from '~/store/ProgressStore'
+
 definePageMeta({
     layout: 'exercise-intro-outro',
     lefturl: 'inductionstep4',
     righturl: '/mathematical-induction'
 })
 const params = useRoute().params
+
+const progressStore = useProgressStore()
+
+onMounted(()=>{
+    progressStore.FinishTutorial()
+})
 </script>
 
 <template>
