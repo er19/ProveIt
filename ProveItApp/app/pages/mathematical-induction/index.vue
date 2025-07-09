@@ -1,7 +1,12 @@
 <script setup lang="ts">
+import { useProgressStore } from '~/store/ProgressStore';
+
     definePageMeta({
     layout: 'default'
     })
+
+    const progressStore = useProgressStore()
+
 </script>
  
 <template>
@@ -10,13 +15,13 @@
             <NuxtLink to="/mathematical-induction/tutorial/intro">
                 <ProofExercisesButton label="Tutorial"></ProofExercisesButton>
             </NuxtLink>
-            <NuxtLink to="/mathematical-induction/exercise-1/showproblem">
+            <NuxtLink to="/mathematical-induction/exercise-1/showproblem" v-if="progressStore.isTutorialFinished">
                 <ProofExercisesButton label="Exercise 1"></ProofExercisesButton>
             </NuxtLink>
-            <NuxtLink to="/mathematical-induction/exercise-2/showproblem">
+            <NuxtLink to="/mathematical-induction/exercise-2/showproblem" v-if="progressStore.isTutorialFinished">
                 <ProofExercisesButton label="Exercise 2"></ProofExercisesButton>
             </NuxtLink>
-            <NuxtLink to="/mathematical-induction/final-exercise/intro">
+            <NuxtLink to="/mathematical-induction/final-exercise/intro" v-if="progressStore.isSecondExerciseFinished">
                 <ProofExercisesButton label="Final Exercise"></ProofExercisesButton>
             </NuxtLink>
         </div>

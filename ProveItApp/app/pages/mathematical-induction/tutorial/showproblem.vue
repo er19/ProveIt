@@ -10,7 +10,7 @@ definePageMeta({
 <template>
     <div class="grid grid-cols-3 grid-rows-2 gap-4 overflow-hidden" >
         <div class="col-span-2 row-span-2 overflow-hidden">
-            <h3 class="flex text-black text-2xl font-bold mb-4"><span>Prove by induction that </span><MathBlock expression="1 + 2 + 3 + . . . + n = \frac{n(n+1)}{2}"/> <span>for every positive integer n.</span></h3>
+            <h3 class="flex text-black text-2xl font-bold mb-4 gap-4"><span>Prove by induction that </span><MathBlock expression="1 + 2 + 3 + . . . + n = \frac{n(n+1)}{2}"/> <span>for every positive integer n.</span></h3>
         </div>
         <div class="col-start-3"></div>
         <div class="col-start-3 row-start2-2">

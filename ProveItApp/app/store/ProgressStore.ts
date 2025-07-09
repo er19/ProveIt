@@ -26,7 +26,5 @@ export const useProgressStore = defineStore('progress', {
         this.isFinalExerciseFinished = true;
     },
   },
-  persist: {
-    storage: sessionStorage, // 👈 THIS makes it clear on tab close!
-  }
+  persist: true
 })
