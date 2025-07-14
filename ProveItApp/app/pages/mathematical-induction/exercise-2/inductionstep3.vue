@@ -3,10 +3,12 @@ definePageMeta({
     layout: 'exercise-content',
     lefturl: 'inductionstep2',
     righturl: 'inductionstep4',
-    title: 'Exercise 2'
+    title: 'Exercise 2',
+    showProgressBar: true,
+    taskIndex: 4,
 })
-
-
+import { useProgressStore } from '~/store/ProgressStore';
+const progressStore = useProgressStore();
 
 const showQuestion = ref(true);
 const showHelpResponse = ref(false);
@@ -24,6 +26,7 @@ function FirstPathFunction(x: string){
         userProgress.value[6] = 'Correct'
         userProgress.value[7] = 'Correct'
         currentProgress.value = 8
+        progressStore.UpdateProgressInExercise2(4);
     }else{
         showQuestion.value = false;
         showHelpResponse.value = false;
@@ -81,6 +84,12 @@ function sensingTrouble(){
   }
 
 }
+
+watch(() => currentProgress.value, (newValue) => {
+    if (newValue === 8 && userProgress.value[7] === 'Correct') {
+        progressStore.UpdateProgressInExercise2(4);
+    }
+});
 </script>
 
 <style>
@@ -250,8 +259,7 @@ function sensingTrouble(){
         <!-- Speech Bubble -->
         <div class="bg-white border-4 border-black rounded-xl p-6 text-left inline-block text-lg font-medium mx-auto">
           <p>
-            Here is the arithmetic operations <br/>
-            that we need to show. Wonderful! <br/>
+            Wonderful! <br/>
             We are actually done. Now I can <br/>
             transform into end-of-proof symbol <br/>
             and conclude our proof. 

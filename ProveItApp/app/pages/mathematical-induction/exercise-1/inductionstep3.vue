@@ -16,7 +16,7 @@ const useInductionHypothesis = ref(false);
 useInductionHypothesis.value = progressStore.progressInExercise1[2] || false;
 
 
-const pool = !useInductionHypothesis ? ref([
+const pool = (useInductionHypothesis.value === false) ? ref([
   { id: 1, name: 'Induction Hypothesis' }
 ]) : ref([])
 const dummyZone = ref([])

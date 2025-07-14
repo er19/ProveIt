@@ -1,9 +1,13 @@
 <script setup lang="ts">
+import { useProgressStore } from '~/store/ProgressStore';
+
 definePageMeta({
     layout: 'exercise-content',
     lefturl: 'inductionstep',
     righturl: 'inductionstep3',
-    title: 'Exercise 2'
+    title: 'Exercise 2',
+    showProgressBar: true,
+    taskIndex: 3,
 })
 
 const useInductionHypothesis = ref(false);
@@ -83,6 +87,12 @@ function handleStatus(status:'inputting' | 'correct' | 'wrong') {
     } 
     console.log(userProgress.value);
 }
+const progressStore = useProgressStore();
+watch(() => currentProgress.value, (newValue) => {
+    if (newValue === 3 && userProgress.value[0] === 'Correct' && userProgress.value[1] === 'Correct' && userProgress.value[2] === 'Correct'&& userProgress.value[3] === 'Correct') {
+        progressStore.UpdateProgressInExercise2(3);
+    }
+});
 </script>
 <template>
     <div class="grid grid-cols-3 grid-rows-2 gap-4 overflow-hidden " >

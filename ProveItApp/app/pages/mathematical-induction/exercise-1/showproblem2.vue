@@ -23,7 +23,6 @@ function FirstPathFunction(x: string){
         showRightResponse.value = true;
         showWrongResponse.value = false;
         progressStore.UpdateProgressInExercise1(0);
-        console.log("Progress in Exercise 1:");
         
     }else{
         showQuestion.value = false;

@@ -23,15 +23,21 @@ export const useProgressStore = defineStore('progress', {
     },
     FinishFirstExercise(){
         this.isFirstExerciseFinished = true;
-        if(this.independentBar == 25 || this.independentBar == 50){
+        if(this.independentBar == 25){
           this.IncreasingIndependentBar(25)
         } 
+        if(this.independentBar == 50 && this.isSecondExerciseFinished){
+          this.IncreasingIndependentBar(25)
+        }
     },
     FinishSecondExercise(){
         this.isSecondExerciseFinished = true;
-        if(this.independentBar == 25 || this.independentBar == 50){
+         if(this.independentBar == 25){
           this.IncreasingIndependentBar(25)
         } 
+        if(this.independentBar == 50 && this.isFirstExerciseFinished){
+          this.IncreasingIndependentBar(25)
+        }
     },
     ShowFinalExercise(){
       if(this.isFirstExerciseFinished && this.isSecondExerciseFinished && this.isTutorialFinished){

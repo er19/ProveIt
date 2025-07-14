@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import UserOptionButton from '~/components/UserOptionButton.vue';
+import { useProgressStore } from '~/store/ProgressStore';
 
 definePageMeta({
     layout: 'exercise-content',
     lefturl: 'showproblem2',
     righturl: 'basecase',
-    title: 'Exercise 2'
+    title: 'Exercise 2',
+    showProgressBar: true,
+    taskIndex: 1,
 })
 const currentIndex = ref(0)
 const hints= ['Time to step up! <br/> Try to write the statement <br/> with big sigma notation',
@@ -20,6 +23,13 @@ function showNextHint() {
 const wrongInput = ref<string[]>([])
 const status = ref<'inputting' | 'correct' | 'wrong'>('inputting')
 const correctAnswer = ref('\sum_{i=1}^{n}i\left(i+1\right)=\frac{1}{3}\cdot n\cdot\left(n+1\right)\cdot\left(n+2\right)')
+const progressStore = useProgressStore();
+watch(status, (newStatus) => {
+  if (newStatus === 'correct') {
+    progressStore.UpdateProgressInExercise2(1);
+  } 
+})
+
 </script>
 <template>
     <div class="grid grid-cols-3 grid-rows-3 gap-4 overflow-hidden " >

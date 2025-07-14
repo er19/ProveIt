@@ -1,22 +1,26 @@
 <script setup lang="ts">
 import UserOptionButton from '~/components/UserOptionButton.vue';
-
+import { useProgressStore } from '~/store/ProgressStore';
 definePageMeta({
     layout: 'exercise-content',
     lefturl: 'showproblem',
     righturl: 'showproblem3',
-    title: 'Exercise 2'
+    title: 'Exercise 2',
+    showProgressBar: true,
+    taskIndex: 0,
 })
 
 const showQuestion = ref(true);
 const showWrongResponse = ref(false);
 const showRightResponse = ref(false);
+const progressStore = useProgressStore();
 
 function FirstPathFunction(x: string){
     if(x === 'right'){
         showQuestion.value = false;
         showRightResponse.value = true;
         showWrongResponse.value = false;
+        progressStore.UpdateProgressInExercise2(0);
     }else{
         showQuestion.value = false;
         showRightResponse.value = false;

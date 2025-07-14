@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import UserOptionButton from '~/components/UserOptionButton.vue';
+import { useProgressStore } from '~/store/ProgressStore';
 
 definePageMeta({
     layout: 'exercise-content',
     lefturl: 'basecase',
     righturl: 'inductionhypothesis',
-    title: 'Exercise 2'
+    title: 'Exercise 2',
+    showProgressBar: true,
+    taskIndex: 2,
 })
 
 const status = ref<'inputting' | 'correct' | 'wrong'>('inputting')
@@ -57,6 +60,13 @@ function handleStatusB(status: 'inputting' | 'correct' | 'wrong') {
 const wrongInput = ref<string[]>([])
 const wrongInputA = ref<string[]>(['2'])
 const wrongInputB = ref<string[]>(['2'])
+const progressStore = useProgressStore();
+watch(() => focusInput.value, (newValue) => {
+    if (newValue === 'Done') {
+        progressStore.UpdateProgressInExercise2(2);
+    }
+});
+
 </script>
 <template>
     <div class="grid grid-cols-3 grid-rows-2 gap-4 overflow-hidden " >

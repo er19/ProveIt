@@ -6,7 +6,7 @@ import { useProgressStore } from '~/store/ProgressStore';
     })
 
     const progressStore = useProgressStore()
-    progressStore.ResetProgressList()
+    // progressStore.ResetProgressList()
 </script>
  
 <template>
