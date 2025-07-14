@@ -38,13 +38,13 @@ function FirstPathFunction(x: string){
             </p>
             
             <div class="flex gap-4 mb-2 text-black text-2xl font-bold justify-around" v-if="showQuestion">
-                <UserOptionButton label="Yes" @click="FirstPathFunction('wrong')"></UserOptionButton>
-                <UserOptionButton label="No" @click="FirstPathFunction('right')"></UserOptionButton>
+                <UserOptionButton label="Yes" @click="FirstPathFunction('right')"></UserOptionButton>
+                <UserOptionButton label="No" @click="FirstPathFunction('wrong')"></UserOptionButton>
             </div>
             <div class="flex gap-4 mb-2 text-black text-2xl font-bold justify-around" v-if="showWrongResponse">
                 <div><UIcon name="i-lucide-X" class="size-6"></UIcon></div>
                 
-                <UserOptionButton label="No" @click="FirstPathFunction('right')"></UserOptionButton>
+                <UserOptionButton label="Yes" @click="FirstPathFunction('right')"></UserOptionButton>
             </div>
             <div class="flex gap-4 mb-2 text-black text-2xl font-bold justify-around" v-if="showRightResponse">
                 
@@ -61,6 +61,11 @@ function FirstPathFunction(x: string){
                 <p v-if="showWrongResponse">
                     Actualy we can! <br/>
                     This statement can be written in big sigma notation <br/>
+                </p>
+                <p v-if="showRightResponse">
+                    Correct!<br/>
+                    We can see that there is a pattern<br/>
+                    on the left side of the equation.
                 </p>
                 <!-- Speech bubble tail -->
                 <div class="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[10px] border-r-[10px] border-t-[20px] border-l-transparent border-r-transparent border-t-black"></div>
