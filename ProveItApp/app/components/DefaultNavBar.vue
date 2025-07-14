@@ -9,7 +9,7 @@
                 <NuxtLink to="/learn" class="text-green-900">Learn</NuxtLink>
             </li>
             <li>
-                <NuxtLink to="/concepts" class="text-green-900">Concepts</NuxtLink>
+                <NuxtLink to="" class="text-black">Concepts</NuxtLink>
             </li>
         </ul>
     </nav>

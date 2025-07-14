@@ -6,7 +6,7 @@ import { useProgressStore } from '~/store/ProgressStore';
     })
 
     const progressStore = useProgressStore()
-
+    progressStore.ResetProgressList()
 </script>
  
 <template>
@@ -21,7 +21,7 @@ import { useProgressStore } from '~/store/ProgressStore';
             <NuxtLink to="/mathematical-induction/exercise-2/showproblem" v-if="progressStore.isTutorialFinished">
                 <ProofExercisesButton label="Exercise 2"></ProofExercisesButton>
             </NuxtLink>
-            <NuxtLink to="/mathematical-induction/final-exercise/intro" v-if="progressStore.isSecondExerciseFinished">
+            <NuxtLink to="/mathematical-induction/final-exercise/intro" v-if="progressStore.isFinalExerciseShowed">
                 <ProofExercisesButton label="Final Exercise"></ProofExercisesButton>
             </NuxtLink>
         </div>

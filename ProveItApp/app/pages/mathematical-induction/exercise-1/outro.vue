@@ -12,6 +12,7 @@ const progressStore = useProgressStore()
 
 onMounted(()=>{
     progressStore.FinishFirstExercise()
+    progressStore.ShowFinalExercise()
 })
 </script>
 

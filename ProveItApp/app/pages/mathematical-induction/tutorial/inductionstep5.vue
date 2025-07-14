@@ -1,8 +1,8 @@
 <script setup lang="ts">
 definePageMeta({
     layout: 'exercise-content',
-    lefturl: 'inductionstep3',
-    righturl: 'inductionstep5',
+    lefturl: 'inductionstep4',
+    righturl: 'inductionstep6',
     title: 'Tutorial'
 })
 const isAllAnimated = ref(false);
@@ -74,18 +74,18 @@ const isAllAnimated = ref(false);
    <div class="col-start-3 row-start2-2">
       <div class="text-center px-4 justify-items-center">
         <!-- Speech Bubble -->
-        <div class="bg-white border-4 border-black rounded-xl p-6 text-left inline-block text-lg relative font-medium mx-auto">
+        <div class="bg-white border-4 border-black rounded-xl p-6 text-left inline-block text-lg font-medium mx-auto relative">
           <p >
-            The rest of the step will <br/>
-            be about transforming our  <br/>
-            equation to P(k+1) right side,  <br/>
-            which is what we want to proof
+            Wonderful! <br/>
+            We are actually done. <br/>
+            Now I can transform into <br/>
+            end-of-proof symbol and conclude our proof. 
           </p>
           <!-- Speech bubble tail -->
           <div class="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[10px] border-r-[10px] border-t-[20px] border-l-transparent border-r-transparent border-t-black"></div>
         </div>
         <!-- Dr Cube character -->
-        <NuxtImg src="/Dr.Cube/Default.png" width="256px" height="256px"></NuxtImg>
+        <NuxtImg src="/Dr.Cube/Good.png" width="256px" height="256px"></NuxtImg>
       </div>
     </div>
   </div>

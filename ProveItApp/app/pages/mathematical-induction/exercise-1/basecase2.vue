@@ -1,21 +1,27 @@
 <script setup lang="ts">
 import UserOptionButton from '~/components/UserOptionButton.vue';
-
+const showQuestion = ref(true);
+const showWrongResponse = ref(false);
+const showRightResponse = ref(false);
+import { useProgressStore } from '~/store/ProgressStore';
 definePageMeta({
     layout: 'exercise-content',
     lefturl: 'basecase',
     righturl: 'inductionhypothesis',
-    title: 'Exercise 1'
+    title: 'Exercise 1',
+    showProgressBar: true,
+    taskIndex: 1,
 })
-const showQuestion = ref(true);
-const showWrongResponse = ref(false);
-const showRightResponse = ref(false);
+
+const progressStore = useProgressStore();
 
 function FirstPathFunction(x: string){
     if(x === 'right'){
         showQuestion.value = false;
         showRightResponse.value = true;
         showWrongResponse.value = false;
+        progressStore.UpdateProgressInExercise1(1);
+        
     }else{
         showQuestion.value = false;
         showRightResponse.value = false;
@@ -60,7 +66,7 @@ function FirstPathFunction(x: string){
             <p class=" flex  gap-4 text-black text-2xl font-bold mb-4" v-if="showRightResponse"><span>P(1) holds</span></p>
         </div>
         <div class="col-start-3"></div>
-        <div class="col-start-3 row-start2-2">
+        <div class="col-start-3 row-start-2">
             <div class="text-center px-4 justify-items-center">
             <!-- Speech Bubble -->
             <div class="bg-white border-4 border-black rounded-xl p-6 text-left inline-block relative text-lg font-medium mx-auto">

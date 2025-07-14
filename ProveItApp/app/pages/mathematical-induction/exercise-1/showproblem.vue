@@ -5,6 +5,7 @@ definePageMeta({
     righturl: 'showproblem2',
     title: 'Exercise 1'
 })
+
 </script>
 
 <template>

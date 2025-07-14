@@ -3,22 +3,32 @@ definePageMeta({
     layout: 'exercise-content',
     lefturl: 'inductionstep2',
     righturl: 'inductionstep4',
-    title: 'Exercise 1'
+    title: 'Exercise 1',
+    showProgressBar: true,
+    taskIndex: 2,
 })
-
-const useInductionHypothesis = ref(false);
+import { useProgressStore } from '~/store/ProgressStore';
 import draggable from 'vuedraggable';
 
-const pool = ref([
+
+const progressStore = useProgressStore();
+const useInductionHypothesis = ref(false);
+useInductionHypothesis.value = progressStore.progressInExercise1[2] || false;
+
+
+const pool = !useInductionHypothesis ? ref([
   { id: 1, name: 'Induction Hypothesis' }
-])
+]) : ref([])
 const dummyZone = ref([])
 function handleDrop(evt:any) {
   const droppedItem = evt.added?.element
   if (droppedItem) {
     useInductionHypothesis.value = true
+    progressStore.UpdateProgressInExercise1(2);
   }
 }
+
+
 // Drop zone
 const proofSteps = ref([])
 
@@ -28,7 +38,7 @@ const hints = [
   'Drag and drop Induction <br/>Hypothesis box into our equation.'
 ]
 
-const EndResponse = 'Great job! Now the only thing <br/>we should do is to transform <br/>our notationinto P(k+1) form. <br/>Don’t worry it is easy, <br/>let me show you.'
+const EndResponse = 'Great job! Now the only thing <br/>we should do is to transform <br/>our notation into P(k+1) form. <br/>Don’t worry it is easy, <br/>let me show you.'
 const currentIndex = ref(0)
 
 function showNextHint() {

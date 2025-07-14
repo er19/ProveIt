@@ -1,22 +1,30 @@
 <script setup lang="ts">
 import UserOptionButton from '~/components/UserOptionButton.vue';
+import { useProgressStore } from '~/store/ProgressStore';
 
 definePageMeta({
     layout: 'exercise-content',
     lefturl: 'showproblem',
     righturl: 'basecase',
-    title: 'Exercise 1'
+    title: 'Exercise 1',
+    showProgressBar: true,
+    taskIndex: 0,
 })
 
 const showQuestion = ref(true);
 const showWrongResponse = ref(false);
 const showRightResponse = ref(false);
 
+const progressStore = useProgressStore();
+
 function FirstPathFunction(x: string){
     if(x === 'right'){
         showQuestion.value = false;
         showRightResponse.value = true;
         showWrongResponse.value = false;
+        progressStore.UpdateProgressInExercise1(0);
+        console.log("Progress in Exercise 1:");
+        
     }else{
         showQuestion.value = false;
         showRightResponse.value = false;
@@ -24,10 +32,9 @@ function FirstPathFunction(x: string){
     }
 }
 
-
 </script>
 <template>
-    <div class="grid grid-cols-3 grid-rows-3 gap-4 overflow-hidden " >
+    <div class="grid grid-cols-3 grid-rows-3 gap-8 overflow-hidden " >
         <div class="col-span-2 row-span-2">
             <h3 class="flex text-black text-2xl font-bold mb-4 gap-4"><span>Prove by induction that the nth odd number is 2n − 1.</span></h3>
             <p class="text-black text-2xl font-bold mb-10">

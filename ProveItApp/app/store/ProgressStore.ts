@@ -5,8 +5,10 @@ export const useProgressStore = defineStore('progress', {
     isTutorialFinished:false,
     isFirstExerciseFinished:false,
     isSecondExerciseFinished:false,
-    isFinalExerciseFinished:false,
-    independentBar: 10 
+    isFinalExerciseShowed:false,
+    independentBar: 0,
+    progressInExercise1: [false,false,false,false] as boolean[],
+    progressInExercise2: [false,false,false,false,false,false] as boolean[]
 
   }),
   actions:{
@@ -15,16 +17,42 @@ export const useProgressStore = defineStore('progress', {
     },
     FinishTutorial(){
         this.isTutorialFinished = true;
+        if(this.independentBar == 0){
+          this.IncreasingIndependentBar(25)
+        } 
     },
     FinishFirstExercise(){
         this.isFirstExerciseFinished = true;
+        if(this.independentBar == 25 || this.independentBar == 50){
+          this.IncreasingIndependentBar(25)
+        } 
     },
     FinishSecondExercise(){
         this.isSecondExerciseFinished = true;
+        if(this.independentBar == 25 || this.independentBar == 50){
+          this.IncreasingIndependentBar(25)
+        } 
     },
-    FinishFinalExercise(){
-        this.isFinalExerciseFinished = true;
+    ShowFinalExercise(){
+      if(this.isFirstExerciseFinished && this.isSecondExerciseFinished && this.isTutorialFinished){
+        this.isFinalExerciseShowed = true;
+        this.independentBar = 100;
+      }
     },
+    ResetProgressList(){
+      this.progressInExercise1 = [false,false,false,false];
+      this.progressInExercise2 = [false,false,false,false,false,false];
+    },
+    UpdateProgressInExercise1(index: number) {
+      console.log("Before update:", this.progressInExercise1)
+      this.progressInExercise1.splice(index, 1, true)
+      console.log("After update:", this.progressInExercise1)
+    },
+    UpdateProgressInExercise2(index: number) {
+      this.progressInExercise2.splice(index, 1, true)
+    }
   },
-  persist: true
+  persist: {
+    storage: sessionStorage
+  }
 })
