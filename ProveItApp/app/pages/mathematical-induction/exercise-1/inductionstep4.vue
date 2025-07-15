@@ -67,7 +67,7 @@ const isAllAnimated = ref(false);
     <div class="col-start-3 row-start2-2">
       <div class="text-center px-4 justify-items-center">
         <!-- Speech Bubble -->
-        <div class="bg-white border-4 border-black rounded-xl p-6 text-left inline-block text-lg font-medium mx-auto">
+        <div class="bg-white border-4 border-black rounded-xl p-6 text-left inline-block relative text-lg font-medium mx-auto">
           <p>
             Wonderful! We are actually done. <br/>
             Now I can transform into end-of-proof <br/>

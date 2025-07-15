@@ -133,7 +133,7 @@ function showNextHint() {
     <div class="col-start-3 row-start2-2">
       <div class="text-center px-4 justify-items-center">
         <!-- Speech Bubble -->
-        <div class="bg-white border-4 border-black rounded-xl p-6 text-left inline-block text-lg font-medium mx-auto">
+        <div class="bg-white border-4 border-black rounded-xl p-6 text-left inline-block text-lg relative font-medium mx-auto">
           <p v-html="hints[currentIndex]" v-if="!useInductionHypothesis"></p>
           <p v-html="EndResponse" v-if="useInductionHypothesis"></p>
           <!-- Speech bubble tail -->
