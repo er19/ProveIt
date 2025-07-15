@@ -41,7 +41,7 @@ export const useProgressStore = defineStore('progress', {
     },
     ShowFinalExercise(){
       if(this.isFirstExerciseFinished && this.isSecondExerciseFinished && this.isTutorialFinished){
-        this.isFinalExerciseShowed = true;
+      
         this.independentBar = 100;
       }
     },
