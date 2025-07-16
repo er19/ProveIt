@@ -171,10 +171,10 @@ function areLatexExpressionsEquivalent(a: string, b: string): boolean {
                 </div>
             </div>
             <div class=" flex  gap-4 text-black text-2xl font-bold mb-10" >
-                <div class="flex gap-4 mb-2 text-black text-2xl font-bold justify-around p-1 rounded-md cursor-pointer border transition-colors duration-200 min-w-70 min-h-8 border-blue-300 hover:border-gray-300 hover:bg-gray-100"  >
-                    <MathBlock :expression="userInputBaseCase[7] || ''" v-if="userInputBaseCase[7] !== ''" :class="{
+                <div class="flex gap-4 mb-2 text-black text-2xl font-bold justify-around p-1 rounded-md cursor-pointer border transition-colors duration-200 min-w-70 min-h-8 border-blue-300 hover:border-gray-300 hover:bg-gray-100" :class="{
       'border-red-500 bg-red-100': !areLatexExpressionsEquivalent(userInputBaseCase[7]??'', answerBaseCase[7]??'')
-    }"/>
+    }"  >
+                    <MathBlock :expression="userInputBaseCase[7] || ''" v-if="userInputBaseCase[7] !== ''" />
                 </div>
                 
             </div>    
@@ -183,11 +183,11 @@ function areLatexExpressionsEquivalent(a: string, b: string): boolean {
             <p class="text-black text-2xl font-bold mb-10">
                 Induction Hypothesis
             </p>
-            <div class="flex gap-4 mb-2 text-black text-2xl font-bold justify-around p-1 rounded-md cursor-pointer border transition-colors duration-200 min-w-70 min-h-8 border-blue-300 hover:border-gray-300 hover:bg-gray-100"  >
-
-            <MathBlock :expression="userInputInductionHypothesis[0] || ''" v-if="userInputInductionHypothesis[0] !== ''"  :class="{
+            <div class="flex gap-4 mb-2 text-black text-2xl font-bold justify-around p-1 rounded-md cursor-pointer border transition-colors duration-200 min-w-70 min-h-8 border-blue-300 hover:border-gray-300 hover:bg-gray-100"  :class="{
       'border-red-500 bg-red-100': !areLatexExpressionsEquivalent(userInputInductionHypothesis[0]??'', answerInputInductionHypothesis[0]??'')
-    }"/>
+    }">
+
+            <MathBlock :expression="userInputInductionHypothesis[0] || ''" v-if="userInputInductionHypothesis[0] !== ''"  />
             
             </div>
             <div class="grid grid-cols-3 grid-rows-1 gap-4">
@@ -255,7 +255,7 @@ function areLatexExpressionsEquivalent(a: string, b: string): boolean {
                         <MathBlock expression='='/>
                         <MathBlock expression='='/>
                     </div>
-                    <div class="grid grid-rows-6 items-start gap-4 mb-10">
+                    <div class="grid grid-rows-6 items-start gap-4">
                         <div class="flex grow gap-4 mb-2 text-black text-2xl font-bold justify-around p-1 rounded-md cursor-pointer border transition-colors duration-200 min-w-70 min-h-8  border-blue-300 hover:border-gray-300 hover:bg-gray-100" :class="{
       'border-red-500 bg-red-100': !areLatexExpressionsEquivalent(userInputInductionStep[2]??'', answerInputInductionStep[2]??'')
     }">
@@ -299,7 +299,7 @@ function areLatexExpressionsEquivalent(a: string, b: string): boolean {
                         </div>
                         
                     </div>
-                    <div class="grid grid-rows-6 items-start gap-4 mb-10">
+                    <div class="grid grid-rows-6 items-start gap-4">
                         <div class="flex grow gap-4 mb-2 text-black text-2xl font-bold justify-around p-1 rounded-md cursor-pointer border transition-colors duration-200 min-w-70 min-h-8  border-blue-300 hover:border-gray-300 hover:bg-gray-100":class="{
       'border-red-500 bg-red-100': !areLatexExpressionsEquivalent(userInputInductionStepExplanation[0]??'', answerInputInductionStepExplanations[0]??'')
     }">

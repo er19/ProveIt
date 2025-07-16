@@ -6,6 +6,7 @@ export const useProgressStore = defineStore('progress', {
     isFirstExerciseFinished:false,
     isSecondExerciseFinished:false,
     isFinalExerciseShowed:false,
+    isFinalExerciseFinished:false,
     independentBar: 0,
     progressInExercise1: [false,false,false,false] as boolean[],
     progressInExercise2: [false,false,false,false,false,false] as boolean[]
@@ -41,7 +42,7 @@ export const useProgressStore = defineStore('progress', {
     },
     ShowFinalExercise(){
       if(this.isFirstExerciseFinished && this.isSecondExerciseFinished && this.isTutorialFinished){
-      
+        this.isFinalExerciseShowed = true;
         this.independentBar = 100;
       }
     },

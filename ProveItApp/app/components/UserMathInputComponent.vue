@@ -81,7 +81,7 @@ math-field {
             ref="mathfieldEl"
             @input="handleTyping"
             @keyup.enter="checkAnswer"
-            class=" w-full h-16 border border-gray-300 rounded-lg p-2"
+            class=" w-full border border-gray-300 rounded-lg p-2 min-height:2.5rem; resize:vertical; overflow:auto;"
         ></math-field>
 </template>
 

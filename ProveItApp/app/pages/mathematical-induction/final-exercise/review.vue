@@ -2,6 +2,7 @@
 import { useExerciseStore } from '~/store/FinalExerciseStore';
 import {ComputeEngine}  from '@cortex-js/compute-engine'
 import { useProgressStore } from '~/store/ProgressStore';
+import { progress } from '#build/ui';
 
 const ce = new ComputeEngine()
 definePageMeta({
